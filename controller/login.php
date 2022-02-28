@@ -38,10 +38,15 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     $row = $query->fetch(PDO::FETCH_NUM);
 
-    echo $row;
-
     if ($row == true) {
+
+        // initialize session variables
+        $_SESSION['logged_in_user_id'] = '1';
+        $_SESSION['logged_in_user_name'] = 'Diego';
+
+        $username = $row[1];
         $rol = $row[3];
+        $_SESSION['username'] = $username;
         $_SESSION['rol'] = $rol;
         switch ($rol) {
             case 1:
@@ -58,7 +63,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                 break;
         }
     } else {
-        echo "No existe el usuario o contraseña. ".$row ."".$username. ":" .$password;
+        echo "No existe el usuario o contraseña. " . $row . "" . $username . ":" . $password;
     }
 }
 ?>
