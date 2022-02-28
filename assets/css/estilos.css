@@ -1,0 +1,10 @@
+.centrado{
+    text-align: center;
+    
+    /* border: 1px solid; */
+}
+
+.linea{
+    visibility: visible;
+    display: inline;
+}
