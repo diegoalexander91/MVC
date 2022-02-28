@@ -3,13 +3,13 @@
 session_start();
 
 if (!isset($_SESSION['rol'])) {
-    header('location: login.php');
+    header('location: ../controller/login.php');
 }
 else{
     if($_SESSION['rol'] != 1){
-        header('location: login.php');
+        header('location: ../controller/login.php');
     }
 }
 
 ?>
-hola mundo
+<a href="../controller/login.php?cerrar_sesion">Cerrar Sesion</a>

@@ -6,14 +6,16 @@ session_start();
 if (isset($_GET['cerrar_sesion'])) {
     session_unset();
     session_destroy();
+    header('location: login.php');
 }
-
+/* */
 if (isset($_SESSION['rol'])) {
     switch ($_SESSION['rol']) {
         case 1:
             header('location: ../view/admin.php');
             break;
         case 2:
+            echo "Este es un usuario de consulta";
             header('location: ../view/consulta.php');
             break;
         case 3:
@@ -24,6 +26,7 @@ if (isset($_SESSION['rol'])) {
             break;
     }
 }
+/* */
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];

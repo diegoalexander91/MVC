@@ -3,14 +3,13 @@
 session_start();
 
 if (!isset($_SESSION['rol'])) {
-    header('location: login.php');
+    header('location: ../controller/login.php');
 }
 else{
     if($_SESSION['rol'] != 2){
-        header('location: login.php');
+        header('location: ../controller/login.php');
     }
 }
 
 ?>
-
-Esto es usuario consulta
+<a href="../controller/login.php?cerrar_sesion">Cerrar Sesion</a>
